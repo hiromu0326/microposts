@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'microposts/create'
+  get 'microposts/destroy'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -15,4 +17,5 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create]
+  resources :microposts, only: [:create, :destroy]
 end
